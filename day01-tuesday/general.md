@@ -1,6 +1,6 @@
 # 2023 Workshop MISSIoN Nanopore Bioinformatics - Day 01
 
-<img align="right" width="140" height="140" src="../src/pollev.png">
+<a href="pollev.com/martinholzer210"><img align="right" width="140" height="140" src="../src/pollev.png"></a>
 
 ## Icebreaker!
 
