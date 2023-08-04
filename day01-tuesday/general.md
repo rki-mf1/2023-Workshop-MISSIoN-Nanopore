@@ -1,10 +1,10 @@
 # 2023 Workshop MISSIoN Nanopore Bioinformatics - Day 01
 
-<a href="pollev.com/martinholzer210"><img align="right" width="140" height="140" src="../src/pollev.png"></a>
+<a href="https://pollev.com/martinholzer210"><img align="right" width="140" height="140" src="../src/pollev.png"></a>
 
 ## Icebreaker!
 
-Go to [pollev.com/martinholzer210](pollev.com/martinholzer210) on your browser or phone and wait until the poll is active.
+Go to [pollev.com/martinholzer210](https://pollev.com/martinholzer210) on your browser or phone and wait until the poll is active.
 
 
 
