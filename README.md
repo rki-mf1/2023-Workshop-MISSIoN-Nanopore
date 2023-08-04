@@ -21,9 +21,10 @@ A practical introduction to long-read bioinformatics for bacterial genome recons
 | Time        | Linux & Nanopores |
 | --          | --               |
 | 10:00-10:30 | Welcome & [introduction](day01-tuesday/general.md) |
-| 10:30-12:00 | [Part 1](day01-tuesday/README.md) |
+| 10:30-11:00 | [Linux re-cap](day01-tuesday/linux.md) |
+| 11:00-12:00 | [Nanopore introduction](day01-tuesday/nanopore.md) |
 | 12:00-13:00 | Lunch break |
-| 13:00-14:30 | [Hands-on & demo]() |
+| 13:00-14:30 | [Hands-on & demo](day01-tuesday/hands-on.md) |
 | 14:30-15:00 | Coffee break |
 | 15:00-15:45 | Continue practical session |
 | 15:45-16:00 | Wrap-up & questions |

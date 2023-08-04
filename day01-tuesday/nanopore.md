@@ -3,3 +3,4 @@
 ## Long-read Nanopore Introduction & Quality Control
 
 
+Next: [Hands-on & practical part](hands-on.md)
