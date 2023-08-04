@@ -28,7 +28,7 @@ A practical introduction to long-read bioinformatics for bacterial genome recons
 | 15:00-15:45 | Continue practical session |
 | 15:45-16:00 | Wrap-up & questions |
 
-### <a name="1"></a> Wednsday, 9 August, 2023
+### <a name="1"></a> Wednesday, 9 August, 2023
 
 | Time        | TOPIC OF THE DAY |
 | --          | --               |
