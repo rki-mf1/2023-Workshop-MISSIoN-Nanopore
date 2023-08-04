@@ -34,11 +34,11 @@ A practical introduction to long-read bioinformatics for bacterial genome recons
 | Time        | Genome Reconstruction I |
 | --          | --               |
 | 09:00-09:30 | Debriefing Day 1 |
-| 09:30-10:30 | [Lecture part 1]() |
+| 09:30-10:30 | [_De novo_ Assembly](day02-wednesday/assembly.md) |
 | 10:30-11:00 | Coffee break |
-| 11:00-12:00 | [Lecture part 2]() |
+| 11:00-12:00 | [Mapping, Polishing & Variant calling](day02-wednesday/mapping-polishing.md) |
 | 12:00-13:00 | Lunch break |
-| 13:00-14:30 | [Hands-on & demo]() |
+| 13:00-14:30 | [Hands-on & demo](day02-wednesday/hands-on.md) |
 | 14:30-15:00 | Coffee break |
 | 15:00-15:45 | Continue practical session |
 | 15:45-16:00 | Wrap-up & questions |
