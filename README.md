@@ -21,7 +21,7 @@ A practical introduction to long-read bioinformatics for bacterial genome recons
 | Time        | TOPIC OF THE DAY |
 | --          | --               |
 | 10:00-10:30 | Welcome & introduction |
-| 10:30-12:00 | [Lecture part 1]() |
+| 10:30-12:00 | [Lecture part 1](day01-tuesday/README.md) |
 | 12:00-13:00 | Lunch break |
 | 13:00-14:30 | [Hands-on & demo]() |
 | 14:30-15:00 | Coffee break |
