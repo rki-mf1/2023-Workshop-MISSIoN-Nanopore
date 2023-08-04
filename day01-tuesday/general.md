@@ -6,9 +6,6 @@
 
 Go to [pollev.com/martinholzer210](https://pollev.com/martinholzer210) on your browser or phone and wait until the poll is active.
 
-
-
-
 ## General information & Setup
 
 * This GitHub repository will guide you through the whole workshop
