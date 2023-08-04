@@ -3,7 +3,7 @@
 ## Lectures
 
 * [Assembly](assembly.md)
-* [Mapping](mapping.md)
+* [Mapping & Polishing](mapping-polishing.md)
 
 ## Practical part
 

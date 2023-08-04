@@ -17,3 +17,26 @@ Now we want to assemble the genome. Read the [`flye` paper](https://www.nature.c
 Finally, annotate genes in your assembly like learned for Illumina data before (e.g. `Prokka`, `Bakta`, `Abricate` ...). How many genes do you find? Can you compare that to Illumina? Is it better? Worse? 
 
 **Bonus**: Try a different assembly tool, e.g. other long-read assemblers are given and compared here: https://www.frontiersin.org/articles/10.3389/fmicb.2022.796465/full
+
+
+
+
+
+* continue with the same Nanopore data from yesterday
+* polish your assembly from yesterday. Did the per-base quality improve? Annotate genes again! How many genes (CDS) do you find now?
+* Now, call variants for your Nanopore sample in comparison to a reference sequence 
+    * To do so, download a reference genome for _Salmonella_ from [NCBI](https://www.ncbi.nlm.nih.gov/genome/)
+    * use `Medaka` now for variant calling and not directly for consensus calculation, here are some hints (that you can/must adjust! Check also https://github.com/nanoporetech/medaka):
+
+```bash=
+# Call variants with Medaka
+#__Important__: Always use the matching `medaka` model based on how the `guppy` basecalling was done! You can check which `medaka` models are available via:
+medaka tools list_models | grep -v Default
+# first, use the `medaka consensus` command like before
+# for the Salmonelle ONT data from 2019 MinION device was used and the FAST model
+medaka consensus --model r941_min_sup_g507 --threads 4 --chunk_len 800 --chunk_ovlp 400 <your-assembl> output.consensus.hdf
+# actually call the variants
+medaka variant <reference-genome> output.consensus.hdf medaka.vcf
+```
+* inspect the resulting [VCF file](https://www.ebi.ac.uk/training/online/courses/human-genetic-variation-introduction/variant-identification-and-analysis/understanding-vcf-format/), read about the format and its structure
+* can you find the called variants that you see in the VCF file also in a genome browser, when you load the mapping file? Do you see any differences/problems?
