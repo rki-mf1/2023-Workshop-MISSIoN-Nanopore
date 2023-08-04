@@ -18,7 +18,7 @@ A practical introduction to long-read bioinformatics for bacterial genome recons
 > All events are held at Nordufer, room N01.O2.018
 
 ### <a name="0"></a> Tuesday, 8 August, 2023
-| Time        | Linux, Nanopores, and Bacteria |
+| Time        | Linux & Nanopores |
 | --          | --               |
 | 10:00-10:30 | Welcome & introduction |
 | 10:30-12:00 | [Part 1](day01-tuesday/README.md) |
@@ -30,7 +30,7 @@ A practical introduction to long-read bioinformatics for bacterial genome recons
 
 ### <a name="1"></a> Wednesday, 9 August, 2023
 
-| Time        | TOPIC OF THE DAY |
+| Time        | Genome Reconstruction I |
 | --          | --               |
 | 09:00-09:30 | Debriefing Day 1 |
 | 09:30-10:30 | [Lecture part 1]() |
@@ -45,7 +45,7 @@ A practical introduction to long-read bioinformatics for bacterial genome recons
 
 ### <a name="2"></a> Thursday, 10 August, 2023
 
-| Time        | TOPIC OF THE DAY |
+| Time        | Genome Reconstruction II & Assembly Quality |
 | --          | --               |
 | 09:00-09:30 | Debriefing Day 2 |
 | 09:30-10:30 | [Lecture part 1]() |
