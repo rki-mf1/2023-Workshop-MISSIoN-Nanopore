@@ -92,7 +92,7 @@ NanoPlot -t 4 --fastq eco-filtered.fastq --title "Filtered reads" \
 
 1) Download another data set: 
 ```bash
-wget --no-check-certificate https://osf.io/pg8nj/download -O 2023-08-nanopore-workshop-example-bacteria.zip
+wget --no-check-certificate https://osf.io/jcsfb/download -O 2023-08-nanopore-workshop-example-bacteria.zip
 ```
 (or copy it from an USB stick). 
 
