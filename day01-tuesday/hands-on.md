@@ -1,14 +1,6 @@
 # 2023 Workshop MISSIoN Nanopore Bioinformatics - Day 01
 
-TODO NOTES
-
-* Linux practes (do some commands, create the conda environment). Use a variable name SAMPLE
-* Get example data
-* Inspect file formats (fast5, fastq), differences to Illumina
-* basecall a small dataset? Bonus... using container...
-* QC, nanoplot, filtering, some other QC tool? 
-
-**Note**: If internet connection is slow, we can also distribute the example data why an USB stick. 
+**Note**: If internet connection is slow, we can also distribute the example data via an USB stick. 
 
 ## Hands-on
 
@@ -72,7 +64,7 @@ NanoPlot -t 4 --fastq input-data/eco.nanopore.fastq.gz --title "Raw reads" \
 ```
 [Publication](https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/bty149/4934939) | [Code](https://github.com/wdecoster/NanoPlot)
 
-**Note**: The `\`` at the end of a line is only for convenience to write a long command into several lines. It tells the command-line that all lines still belong together although they are separated by "enter" keys. However, if you type all of the command, i.e., paths etc, in one line do not copy/type the backslash at the end of the lines.
+**Note**: The `\` at the end of a line is only for convenience to write a long command into several lines. It tells the command-line that all lines still belong together although they are separated by "enter" keys. However, if you type all of the command, i.e., paths etc, in one line do not copy/type the backslash at the end of the lines.
 
 ### Read filtering (Filtlong)
 
@@ -100,7 +92,10 @@ NanoPlot -t 4 --fastq eco-filtered.fastq --title "Filtered reads" \
 ```bash
 wget --no-check-certificate https://osf.io/pg8nj/download -O 2023-08-nanopore-workshop-example-bacteria.zip
 ```
-(or copy it from an USB stick). Make a new subfolder in `nanopore-workshop` (or however you named your workshop directory) and place the downloaded `zip` archive here. Unzip the archive you just downloaded. Inspect the content. There is a MinKNOW summary report HTML file. Open it and inspect it. What can you tell about the nanopore sequencing run? Did it work well? 
+(or copy it from an USB stick). 
+
+Make a new subfolder in `nanopore-workshop` (or however you named your workshop directory) and place the downloaded `zip` archive here. Unzip the archive you just downloaded. Inspect the content. There is a MinKNOW summary report HTML file. Open it and inspect it. What can you tell about the nanopore sequencing run? Did it work well? 
+
 2) Investigate the quality using `NanoPlot` and, if you think it's necessary, lenght-filter the FASTQ file. 
 3) Use `PycoQC` to generate qc plots for the data set. Install `PycoQC` via Conda or use an available environment. In difference to `NanoPlot`, `PycoQC` needs as input a file called `sequencing_summary.txt` or similar. This is provided after the basecalling alongside with the FASTQ files. (_Note that the `sequencing_summarz.txt` was downsampled for the purpose of this workshop_)
 
@@ -112,9 +107,11 @@ wget --no-check-certificate https://osf.io/pg8nj/download -O 2023-08-nanopore-wo
 
 Older versions might not work correctly with the input FAST5 data! Maybe you have better luck in installing a newer version of `PycoQC` w/o the hussle... 
 
-## Bonus 2 (and a little detour)
+## Bonus 2 (and a little detour into containers)
 
-Do basecalling by your own. **Note that this can be quite tricky and involves deeper Linux knowledge. Usually, you will be fine with the FASTQ and the already basecalled data that comes out of MinKNOW.**
+Do basecalling by your own. 
+
+**Note that this can be quite tricky and involves deeper Linux knowledge. Usually, you will be fine with the FASTQ and the already basecalled data that comes out of MinKNOW.**
 
 This might not work well on all systems. A good internet connection is needed as well as some basic knowledge in Docker container usage. Also, good hardware and in the best case a GPU are recommended. 
 
@@ -147,3 +144,5 @@ guppy_basecaller –i ./fast5 –s ./guppy_out –c dna_r10.4.1_e8.2_260bps_sup.
 # Attention! This will take ages even on a small FAST5 like in this example. You can also cancel that with "ctrl C" 
 # You should really run basecalling on a GPU.  
 ```
+
+**Note**: An alternative to Docker is Singularity. The commands are slightly different then. However, on some systems (e.g. a High-performance cluster) it is not possible to use Docker due to permission settings and then Singularity is an option. Luckily, Docker containers can be easily (and automatically) converted into Singularity. 
