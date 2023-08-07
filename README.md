@@ -22,11 +22,11 @@ A practical introduction to long-read bioinformatics for bacterial genome recons
 | --          | --               |
 | 10:00-10:30 | Welcome & [introduction](day01-tuesday/general.md) |
 | 10:30-11:00 | [Linux re-cap](day01-tuesday/linux.md) |
-| 11:00-12:00 | [Nanopore introduction](day01-tuesday/nanopore.md) |
+| 11:00-12:00 | [Nanopore introduction I](day01-tuesday/nanopore.md) |
 | 12:00-13:00 | Lunch break |
-| 13:00-14:30 | [Hands-on & demo](day01-tuesday/hands-on.md) |
-| 14:30-15:00 | Coffee break |
-| 15:00-15:45 | Continue practical session |
+| 13:00-14:00 | [Nanopore introduction II](day01-tuesday/nanopore.md) |
+| 14:00-14:30 | Coffee break |
+| 14:30-15:45 | [Hands-on & demo](day01-tuesday/hands-on.md) |
 | 15:45-16:00 | Wrap-up & questions |
 
 ### <a name="1"></a> Wednesday, 9 August, 2023
