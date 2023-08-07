@@ -141,10 +141,17 @@ guppy_basecaller --print_workflows
 # run with 260 bp/s translocation speed (which was discontinued in summer 2023, now 400 bp/s is default) 
 # and the super-acc SUP model
 guppy_basecaller –i ./fast5 –s ./guppy_out –c dna_r10.4.1_e8.2_260bps_sup.cfg \
---num_callers 2 --cpu_threads_per_caller 1
+--num_callers 48 --cpu_threads_per_caller 1
 
-# Attention! This will take ages even on a small FAST5 like in this example. You can also cancel that with "ctrl C" 
-# You should really run basecalling on a GPU.  
+# Attention! This will take ages even on a small FAST5 like in this example. You can also cancel that with "ctrl C". 
+# In this example, I ran on 48 cores (num_callers) and for the small example FAST5 this took XXXX.
+# You should really run basecalling on a GPU, if possible.  
+
+# Here is an example command using a GPU and some additional qc parameters. 
+guppy_basecaller -i ./fast5 -s ./guppy_out_gpu -c dna_r10.4.1_e8.2_260bps_sup.cfg \
+-x auto -r --trim_strategy dna -q 0 --disable_pings
+
+# On the RKI High-Performance Cluster, this command took 2 minutes for basecalling the example data. 
 ```
 
 **Note**: An alternative to Docker is Singularity. The commands are slightly different then. However, on some systems (e.g. a High-performance cluster) it is not possible to use Docker due to permission settings and then Singularity is an option. Luckily, Docker containers can be easily (and automatically) converted into Singularity. 
