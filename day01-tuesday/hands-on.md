@@ -8,6 +8,7 @@ TODO NOTES
 * basecall a small dataset? Bonus... using container...
 * QC, nanoplot, filtering, some other QC tool? 
 
+**Note**: If internet connection is slow, we can also distribute the example data why an USB stick. 
 
 ## Hands-on
 
@@ -58,6 +59,9 @@ pwd
 # If so, make a new folder and move/rename the downloaded file:
 mkdir input-data
 mv SRR12012232_1.fastq.gz input-data/eco.nanopore.fastq.gz
+# double-check that everything is in place:
+ls -lah input data/
+# all good? Let's move on to QC!
 ```
 
 ### Quality control (NanoPlot)
@@ -87,5 +91,59 @@ NanoPlot -t 4 --fastq eco-filtered.fastq --title "Filtered reads" \
 ## Excercise
 
 1) Investigate the content of the FASTQ file you downloaded: `input-data/eco.nanopore.fastq.gz`. What are the first four lines telling you? What do you need to do to make the content of the file "human readable"? 
-2) foo
-3) Bar
+2) Try `FastQC` on the _E. coli_ example FASTQ. Inspect the output. 
+2) You should also find example data for _Salmonella_ on your system; for the same samples you analyzed short-read Illumina data. Pick one of the _Salmonella_ nanopore FASTQ files. Create a decent folder structure to work with the data. Check the quality. Is read length filtering necessary? If so, do a read length filtering. 
+
+## Bonus 1
+
+1) Download another data set: 
+```bash
+wget --no-check-certificate https://osf.io/pg8nj/download -O 2023-08-nanopore-workshop-example-bacteria.zip
+```
+(or copy it from an USB stick). Make a new subfolder in `nanopore-workshop` (or however you named your workshop directory) and place the downloaded `zip` archive here. Unzip the archive you just downloaded. Inspect the content. There is a MinKNOW summary report HTML file. Open it and inspect it. What can you tell about the nanopore sequencing run? Did it work well? 
+2) Investigate the quality using `NanoPlot` and, if you think it's necessary, lenght-filter the FASTQ file. 
+3) Use `PycoQC` to generate qc plots for the data set. Install `PycoQC` via Conda or use an available environment. In difference to `NanoPlot`, `PycoQC` needs as input a file called `sequencing_summary.txt` or similar. This is provided after the basecalling alongside with the FASTQ files. (_Note that the `sequencing_summarz.txt` was downsampled for the purpose of this workshop_)
+
+**Note on installing `PycoQC`**: On my system it was a pain to install `PycoQC`. I finally managed via 
+
+* creating a new conda environment and installing `mamba` and Python version 3.7 into it
+* activating the new environment
+* then installing `PycoQC` and explicitly defining the newest version 2.5.2 (as of 2023-08-07)
+
+Older versions might not work correctly with the input FAST5 data! Maybe you have better luck in installing a newer version of `PycoQC` w/o the hussle... 
+
+## Bonus 2 (and a little detour)
+
+Do basecalling by your own. **Note that this can be quite tricky and involves deeper Linux knowledge. Usually, you will be fine with the FASTQ and the already basecalled data that comes out of MinKNOW.**
+
+This might not work well on all systems. A good internet connection is needed as well as some basic knowledge in Docker container usage. Also, good hardware and in the best case a GPU are recommended. 
+
+Another nice overview (even though might be slightly outdated) is provided here: [Basecalling with Guppy](https://timkahlke.github.io/LongRead_tutorials/BS_G.html).
+
+1) You can also find raw signal FAST5 data in the downloaded folder. Re-basecall the signal data to generate a FASTQ output with `guppy`. Chose an appropriate basecalling model (check for details in the MinKNOW report). Unfortunately, `guppy` can not be installed via Conda and is only provided via the ONT community which needs an account. However, the tool can be installed in a so-called Docker container and then run. If you never used [Docker](https://www.docker.com/products/docker-desktop/), here are some [introductory slides](content/container-wms.pdf). A few other good resources:
+
+* [The dark secret about containers in Bioinformatics](https://www.happykhan.com/posts/dark-secret-about-containers/)
+* [Container Introduction Training](https://github.com/sib-swiss/containers-introduction-training)
+
+```bash
+# Assuming that you have Docker installed and configured
+# Get a container image with guppy
+docker pull nanozoo/guppy_gpu:6.4.6-1--2c17584
+
+# Navigate to the folder where you have your raw FAST5 data located, e.g. in a folder called 'fast5'. 
+# Then start an interactive session from the container and mount the folder you are currently in *into* the container. 
+# Otherwise your local files would not be visible from inside of the container.
+docker run --rm -it -w $PWD -v $PWD:$PWD nanozoo/guppy_gpu:6.4.6-1--2c17584 /bin/bash
+
+# list the available flowcell and library kits, so you can pick an appropriate basecalling model
+guppy_basecaller --print_workflows
+
+# run basecalling, here we're using as an example a model for R10.4.1 flow cell, 
+# run with 260 bp/s translocation speed (which was discontinued in summer 2023, now 400 bp/s is default) 
+# and the super-acc SUP model
+guppy_basecaller –i ./fast5 –s ./guppy_out –c dna_r10.4.1_e8.2_260bps_sup.cfg \
+--num_callers 2 --cpu_threads_per_caller 1
+
+# Attention! This will take ages even on a small FAST5 like in this example. You can also cancel that with "ctrl C" 
+# You should really run basecalling on a GPU.  
+```
