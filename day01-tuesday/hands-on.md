@@ -144,7 +144,7 @@ guppy_basecaller –i ./fast5 –s ./guppy_out –c dna_r10.4.1_e8.2_260bps_sup.
 --num_callers 48 --cpu_threads_per_caller 1
 
 # Attention! This will take ages even on a small FAST5 like in this example. You can also cancel that with "ctrl C". 
-# In this example, I ran on 48 cores (num_callers) and for the small example FAST5 this took XXXX.
+# In this example, I ran on 48 cores (num_callers) and for the small example FAST5 this took <STILL RUNNING>.
 # You should really run basecalling on a GPU, if possible.  
 
 # Here is an example command using a GPU and some additional qc parameters. 
