@@ -2,6 +2,8 @@
 
 **Note**: If internet connection is slow, we can also distribute the example data via an USB stick. 
 
+We will usually start with an "Hands-on" part that will guide you through some of the content from the lectures. Then, there is an "Excercise" part with more open questions. Lastly, there are "Bonus" questions that might require some additional knowledge and research. If you can not make it to the "Bonus", dont worry. The "Hands-on" and "Excercise" parts are most important and will be discussed the next day.
+
 ## Hands-on
 
 ### Install and use analysis tools
@@ -117,7 +119,7 @@ This might not work well on all systems. A good internet connection is needed as
 
 Another nice overview (even though might be slightly outdated) is provided here: [Basecalling with Guppy](https://timkahlke.github.io/LongRead_tutorials/BS_G.html).
 
-1) You can also find raw signal FAST5 data in the downloaded folder. Re-basecall the signal data to generate a FASTQ output with `guppy`. Chose an appropriate basecalling model (check for details in the MinKNOW report). Unfortunately, `guppy` can not be installed via Conda and is only provided via the ONT community which needs an account. However, the tool can be installed in a so-called Docker container and then run. If you never used [Docker](https://www.docker.com/products/docker-desktop/), here are some [introductory slides](content/container-wms.pdf). A few other good resources:
+1) You can also find raw signal FAST5 data in the downloaded folder from _Bonus 1)_. Re-basecall the signal data to generate a FASTQ output with `guppy`. Chose an appropriate basecalling model (check for details in the MinKNOW report). Unfortunately, `guppy` can not be installed via Conda and is only provided via the ONT community which needs an account. However, the tool can be installed in a so-called Docker container and then run. If you never used [Docker](https://www.docker.com/products/docker-desktop/), here are some [introductory slides](content/container-wms.pdf). A few other good resources:
 
 * [The dark secret about containers in Bioinformatics](https://www.happykhan.com/posts/dark-secret-about-containers/)
 * [Container Introduction Training](https://github.com/sib-swiss/containers-introduction-training)
