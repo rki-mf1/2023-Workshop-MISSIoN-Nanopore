@@ -1,5 +1,14 @@
 # 2023 Workshop MISSIoN Nanopore Bioinformatics - Day 01
 
+TODO NOTES
+
+* Linux practes (do some commands, create the conda environment)
+* Get example data
+* Inspect file formats (fast5, fastq), differences to Illumina
+* basecall a small dataset? Bonus... using container...
+* QC, nanoplot, filtering, some other QC tool? 
+
+
 ## Hands-on
 
 ### Install and use analysis tools

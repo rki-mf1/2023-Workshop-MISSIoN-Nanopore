@@ -22,9 +22,9 @@ A practical introduction to long-read bioinformatics for bacterial genome recons
 | --          | --               |
 | 10:00-10:30 | Welcome & [introduction](day01-tuesday/general.md) |
 | 10:30-11:00 | [Linux re-cap](day01-tuesday/linux.md) |
-| 11:00-12:00 | [Nanopore introduction I](day01-tuesday/nanopore.md) |
+| 11:00-12:00 | [Nanopore introduction I (intro)](day01-tuesday/nanopore.md) |
 | 12:00-13:00 | Lunch break |
-| 13:00-14:00 | [Nanopore introduction II](day01-tuesday/nanopore.md) |
+| 13:00-14:00 | [Nanopore introduction II (file formats & QC)](day01-tuesday/nanopore.md) |
 | 14:00-14:30 | Coffee break |
 | 14:30-15:45 | [Hands-on & demo](day01-tuesday/hands-on.md) |
 | 15:45-16:00 | Wrap-up & questions |
@@ -73,5 +73,6 @@ A practical introduction to long-read bioinformatics for bacterial genome recons
 
 This course material is partly based on the following resources and on contributions from great people:
 
-* Sebastian "Raverjay" Krautwurst, FSU Jena
+* Sebastian "Raverjay" Krautwurst, FSU Jena, some Linux and ONT content
 * Workshop structure inspired by [https://github.com/cinemaparis/2023](https://github.com/cinemaparis/2023)
+* Some ONT intro slides from Josh Quick, [original](https://github.com/cinemaparis/2023/blob/main/day1-Tuesday/slides-Quick.pdf)
