@@ -85,3 +85,7 @@ NanoPlot -t 4 --fastq eco-filtered.fastq --title "Filtered reads" \
 
 
 ## Excercise
+
+1) Investigate the content of the FASTQ file you downloaded: `input-data/eco.nanopore.fastq.gz`. What are the first four lines telling you? What do you need to do to make the content of the file "human readable"? 
+2) foo
+3) Bar
