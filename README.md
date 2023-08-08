@@ -65,9 +65,8 @@ A practical introduction to long-read bioinformatics for bacterial genome recons
 | 09:00-09:30 | Debriefing Day 3 |
 | 09:30-10:30 | [Lecture TBA]() |
 | 10:30-11:00 | Coffee break |
-| 13:00-14:30 | [Hands-on & demo]() |
-| 12:00-13:00 | Lunch break |
-| 13:00-14:00 | Wrap-up & questions |
+| 11:00-12:00 | [Hands-on & demo]() |
+| 12:00-12:30 | Wrap-up & questions |
 
 ## Acknowledgement
 
