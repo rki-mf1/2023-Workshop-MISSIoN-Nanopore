@@ -49,7 +49,7 @@ A practical introduction to long-read bioinformatics for bacterial genome recons
 | Time        | Genome Reconstruction II & Variant calling |
 | --          | --               |
 | 09:00-09:30 | Debriefing Day 2 |
-| 09:30-10:30 | [Assembly quality]() |
+| 09:30-10:30 | [Assembly & annotation quality]() |
 | 10:30-11:00 | Coffee break |
 | 11:00-12:00 | [Variant calling]() |
 | 12:00-13:00 | Lunch break |
