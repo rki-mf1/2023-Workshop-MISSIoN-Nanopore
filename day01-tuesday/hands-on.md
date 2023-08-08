@@ -6,7 +6,7 @@
 
 **Example data**: We will work with three different example data sets to showcase different usecases. 
 
-1) To match the _Salmonella_ Illumina data that you already analyzed, you will find corresponding nanopore data on your machines. You can analyze all files or pick one. Note that this nanopore sequencing data is already a few years old. 
+1) To match the _Salmonella_ Illumina data that you already analyzed, you will find corresponding nanopore data on your machines. You can analyze all files or pick one. Note that this nanopore sequencing data is already a few years old. It is also available from the European Nucleotide Archive (ENA, project ID https://www.ebi.ac.uk/ena/browser/view/PRJNA887350)
 2) Besides, we will use a public available _E. coli_ nanopore sample from [ENA](https://www.ebi.ac.uk/ena/browser/view/SRR12012232). 
 3) Our last example data set was recently sequenced with up-to-date nanopore chemistry (R10.4.1) and includes also raw signal FAST5 data.  
 
