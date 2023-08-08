@@ -105,3 +105,7 @@ medaka snp <REFERENCE-GENOME> output.consensus.hdf medaka.snp.vcf --verbose
 ## Bonus 1
 
 Try different allele frequency cutoffs with `Medaka` for the variant calling: `--threshold 0.1` How do the results change?
+
+## Bonus 2
+
+You also have short-read Illumina data corresponding to your _Salmonella_ Nanopore data. Use the high-accuracy short-read data to polish your _best_ long-read assembly again. Use `Pilon` for that. Install `Pilon` and familiarize yourself with the tool. For the necessary mapping of the short reads to the assembly you can use `minimap2` with the appropriate option for short reads or another mapping tool such as `bwa`.  
