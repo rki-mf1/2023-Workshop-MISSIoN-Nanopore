@@ -18,6 +18,7 @@ mkdir myfolder
 # make conda environment and activate it
 conda create -n nanoplot
 conda activate nanoplot
+conda install nanoplot
 # run a program
 NanoPlot reads.fq.gz ...
 ```
