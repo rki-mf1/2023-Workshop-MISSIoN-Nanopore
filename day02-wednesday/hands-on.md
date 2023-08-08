@@ -40,7 +40,7 @@ Alternative:
 
 How many contigs did the `flye` assembly produce for the _E. coli_ sample? 
 
-#### Mapping (minimap2)
+### Mapping (minimap2)
 
 Now, we want to map the long reads to the assembly you calculated to visualize them.
 
@@ -51,7 +51,7 @@ minimap2 -ax map-ont flye_output/assembly.fasta eco-filtered.fastq > eco-mapping
 
 Inspect the resulting SAM file. Check the [SAM format specification](https://samtools.github.io/hts-specs/SAMv1.pdf).
 
-#### Visualization of the mapping (IGV)
+### Visualization of the mapping (IGV)
 
 ```bash
 # first, we need to convert the SAM file into a sorted BAM file to load it subsequently in IGV
@@ -62,7 +62,7 @@ samtools index eco-mapping.sorted.bam
 igv &
 ```
 
-#### Alternative: Visualization of mapping (Tablet)
+### Alternative: Visualization of mapping (Tablet)
 
 ```bash
 # open the GUI
