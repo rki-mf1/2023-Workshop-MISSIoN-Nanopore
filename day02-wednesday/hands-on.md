@@ -97,12 +97,12 @@ Try a different assembly tool, e.g. other long-read assemblers are given and com
 
 ## Bonus 2
 
-Remember the R10.4.1 data you downloaded on day 1 for the Bonus tasks? 
+Remember the R10.4.1 data you downloaded on day 1 for the Bonus tasks? That one:
 
 ```bash
 wget --no-check-certificate https://osf.io/jcsfb/download -O 2023-08-nanopore-workshop-example-bacteria.zip
 ```
 
-Also assemble the FASTQ data. Can you find out which bacterial species is in the sample? 
+Also assemble the FASTQ data that is in this archive. Inspect the assembly graph. Can you find out which bacterial species is in the sample? 
 
 
