@@ -32,7 +32,7 @@ flye --version
 
 __Reminder: You can also install specific versions of a tool!__
 * important for full reproducibility
-* e.g. `conda install flye=2.9.0`
+* e.g. `conda install flye==2.9.0`
 * per default, `conda` will try to install the newest tool version based on your configured channels and system architecture and dependencies to other tools
 
 ### Create a folder for the hands-on work
@@ -41,7 +41,7 @@ Below are just example paths, you can also adjust them and use other folder name
 
 ```bash
 # Switch to a path on your system where you want to store your data and results
-cd /home/$USER/
+cd /scratch/$USER
 # Create new folder
 mkdir nanopore-workshop
 cd nanopore-workshop
@@ -52,7 +52,7 @@ cd nanopore-workshop
 Get some example data. For example, find some public Nanopore read data for _E. coli_ on  [ENA](https://www.ebi.ac.uk/ena/browser/view/SRR12012232).
 
 ```bash
-wget ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR120/032/SRR12012232/SRR12012232_1.fastq.gz
+wget "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR120/032/SRR12012232/SRR12012232_1.fastq.gz"
 ls -lah SRR12012232_1.fastq.gz
 # You just downloaded 397MB of compressed Nanopore raw reads
 # Let's place this file in a new folder to keep a clean folder structure
@@ -109,7 +109,13 @@ Make a new subfolder in `nanopore-workshop` (or however you named your workshop 
 2) Investigate the quality using `NanoPlot` and, if you think it's necessary, lenght-filter the FASTQ file. 
 3) Use `PycoQC` to generate qc plots for the data set. Install `PycoQC` via Conda or use an available environment. In difference to `NanoPlot`, `PycoQC` needs as input a file called `sequencing_summary.txt` or similar. This is provided after the basecalling alongside with the FASTQ files. (_Note that the `sequencing_summary.txt` was downsampled for the purpose of this workshop_)
 
-**Note on installing `PycoQC`**: On my system it was a pain to install `PycoQC`. I finally managed via 
+**Note on installing `PycoQC`**: On my system it was a pain to install `PycoQC`. I finally managed using mamba:
+
+```bash
+mamba create -n pycoqc pycoqc
+```
+
+If that doesn't work you might need to:
 
 * creating a new conda environment and installing `mamba` and Python version 3.7 into it
 * activating the new environment
@@ -149,7 +155,7 @@ guppy_basecaller --print_workflows
 # run with 260 bp/s translocation speed (which was discontinued in summer 2023, now 400 bp/s is default) 
 # and the super-acc SUP model
 guppy_basecaller –i ./fast5 –s ./guppy_out –c dna_r10.4.1_e8.2_260bps_sup.cfg \
---num_callers 48 --cpu_threads_per_caller 1
+    --num_callers 48 --cpu_threads_per_caller 1
 
 # Attention! This will take ages even on a small FAST5 like in this example. You can also cancel that with "ctrl C". 
 # In this example, I ran on 48 cores (num_callers) and for the small example FAST5 this took 13 h for 40% of the reads basecalled.
@@ -157,9 +163,9 @@ guppy_basecaller –i ./fast5 –s ./guppy_out –c dna_r10.4.1_e8.2_260bps_sup.
 
 # Here is an example command using a GPU and some additional qc parameters. 
 guppy_basecaller -i ./fast5 -s ./guppy_out_gpu -c dna_r10.4.1_e8.2_260bps_sup.cfg \
--x auto -r --trim_strategy dna -q 0 --disable_pings
+    -x auto -r --trim_strategy dna -q 0 --disable_pings
 
 # On the RKI High-Performance Cluster, this command took 2 minutes for basecalling the example data. 
 ```
 
-**Note**: An alternative to Docker is Singularity. The commands are slightly different then. However, on some systems (e.g. a High-performance cluster) it is not possible to use Docker due to permission settings and then Singularity is an option. Luckily, Docker containers can be easily (and automatically) converted into Singularity. 
+**Note**: An alternative to Docker is Singularity. The commands are slightly different then. However, on some systems (e.g. a High-performance cluster) it is not possible to use Docker due to permission settings and then Singularity is an option. Luckily, Docker containers can be easily (and automatically) converted into Singularity.
