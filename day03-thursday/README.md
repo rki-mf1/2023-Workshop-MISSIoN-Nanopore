@@ -1,0 +1,10 @@
+# 2023 Workshop MISSIoN Nanopore Bioinformatics - Day 03
+
+## Lectures
+
+* [Assembly quality](assembly-qc.md)
+* [Variant calling](variant-calling.md)
+
+## Practical part
+
+* [Hands-on](hands-on.md)
