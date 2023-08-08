@@ -34,9 +34,9 @@ A practical introduction to long-read bioinformatics for bacterial genome recons
 | Time        | Genome Reconstruction I |
 | --          | --               |
 | 09:00-09:30 | Debriefing Day 1 |
-| 09:30-10:30 | [_De novo_ Assembly](day02-wednesday/assembly.md) |
+| 09:30-10:30 | [_De novo_ Assembly & Annotation](day02-wednesday/assembly.md) |
 | 10:30-11:00 | Coffee break |
-| 11:00-12:00 | [Mapping, Polishing & Variant calling](day02-wednesday/mapping-polishing.md) |
+| 11:00-12:00 | [Mapping & Polishing](day02-wednesday/mapping-polishing.md) |
 | 12:00-13:00 | Lunch break |
 | 13:00-14:30 | [Hands-on & demo](day02-wednesday/hands-on.md) |
 | 14:30-15:00 | Coffee break |
@@ -46,12 +46,12 @@ A practical introduction to long-read bioinformatics for bacterial genome recons
 
 ### <a name="2"></a> Thursday, 10 August, 2023
 
-| Time        | Genome Reconstruction II & Assembly Quality |
+| Time        | Genome Reconstruction II & Variant calling |
 | --          | --               |
 | 09:00-09:30 | Debriefing Day 2 |
-| 09:30-10:30 | [Lecture part 1]() |
+| 09:30-10:30 | [Assembly quality]() |
 | 10:30-11:00 | Coffee break |
-| 11:00-12:00 | [Lecture part 2]() |
+| 11:00-12:00 | [Variant calling]() |
 | 12:00-13:00 | Lunch break |
 | 13:00-14:30 | [Hands-on & demo]() |
 | 14:30-15:00 | Coffee break |
@@ -60,10 +60,10 @@ A practical introduction to long-read bioinformatics for bacterial genome recons
 
 ### <a name="3"></a> Friday, 11 August, 2023
 
-| Time        | TOPIC OF THE DAY |
+| Time        | The Rest & Open Questions |
 | --          | --               |
 | 09:00-09:30 | Debriefing Day 3 |
-| 09:30-10:30 | [Lecture part 1]() |
+| 09:30-10:30 | [Lecture TBA]() |
 | 10:30-11:00 | Coffee break |
 | 13:00-14:30 | [Hands-on & demo]() |
 | 12:00-13:00 | Lunch break |
