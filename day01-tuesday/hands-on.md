@@ -94,7 +94,7 @@ NanoPlot -t 4 --fastq eco-filtered.fastq --title "Filtered reads" \
 
 1) Investigate the content of the FASTQ file you downloaded: `input-data/eco.nanopore.fastq.gz`. What are the first four lines telling you? What do you need to do to make the content of the file "human readable"? 
 2) Try `FastQC` on the _E. coli_ example FASTQ. Inspect the output. 
-2) Now, use the example data for _Salmonella_ on your system; for the same samples you analyzed short-read Illumina data. Pick one of the _Salmonella_ nanopore FASTQ files. Create a decent folder structure to work with the data. Check the quality. Is read length filtering necessary? If so, do a read length filtering and compare the results. 
+2) Now, use the example data for _Salmonella_ on your system; for the same samples you analyzed short-read Illumina data. Pick one of the _Salmonella_ nanopore FASTQ files. Create a decent folder structure to work with the data. Check the quality. Is read length filtering necessary? If so, do a read length filtering and compare the results. How long are the reads? Do you see any problems? Also try `fastqc` with the appropriate long-read parameter on your sample. What is the GC content? Does it match the expected GC content of _Salmonella_?
 
 ## Bonus 1
 
