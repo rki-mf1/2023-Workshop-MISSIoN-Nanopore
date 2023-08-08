@@ -11,7 +11,7 @@ A practical introduction to long-read bioinformatics for bacterial genome recons
 
 ## Instructors
 
-* [Martin Hölzer](https://hoelzer.github.io)
+* [Martin Hölzer](https://hoelzer.github.io), Matt Huska
 
 ## Schedule
 
