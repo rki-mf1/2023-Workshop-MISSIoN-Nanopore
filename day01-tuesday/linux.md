@@ -9,8 +9,10 @@
 ```bash
 # Print your user name
 echo $USER
-# change directory to your user home directory
+# change directory to your user home directory (all of these are the same)
 cd /home/$USER
+cd $HOME
+cd ~  # <- the shortest version, I like this one
 # show content of current directory
 ls
 # make a new directory called 'myfolder'
