@@ -1,8 +1,16 @@
 # 2023 Workshop MISSIoN Nanopore Bioinformatics - Day 01
 
-**Note**: If internet connection is slow, we can also distribute the example data via an USB stick. 
+**Note**: If internet connection is slow, we can also distribute the example data via an USB stick (ask your instructor ;) ). 
 
-We will usually start with an "Hands-on" part that will guide you through some of the content from the lectures. Then, there is an "Excercise" part with more open questions. Lastly, there are "Bonus" questions that might require some additional knowledge and research. If you can not make it to the "Bonus", dont worry. The "Hands-on" and "Excercise" parts are most important and will be discussed the next day.
+**General**: We will usually start with an "Hands-on" part that will guide you through some of the content from the lectures. Then, there is an "Excercise" part with more open questions. Lastly, there might be "Bonus" questions that require some additional knowledge and research. If you can not make it to the "Bonus", dont worry. The "Hands-on" and "Excercise" parts are most important and will be discussed the next day.
+
+**Example data**: We will work with three different example data sets to showcase different usecases. 
+
+1) To match the _Salmonella_ Illumina data that you already analyzed, you will find corresponding nanopore data on your machines. You can analyze all files or pick one. Note that this nanopore sequencing data is already a few years old. 
+2) Besides, we will use a public available _E. coli_ nanopore sample from [ENA](https://www.ebi.ac.uk/ena/browser/view/SRR12012232). 
+3) Our last example data set was recently sequenced with up-to-date nanopore chemistry (R10.4.1) and includes also raw signal FAST5 data.  
+
+:bulb: Think about a good and descriptive folder and file structure when working on the data!
 
 ## Hands-on
 
