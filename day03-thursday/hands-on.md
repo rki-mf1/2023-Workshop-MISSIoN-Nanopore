@@ -79,7 +79,7 @@ medaka tools list_models | grep -v Default
 
 Did the per-base quality improve? Annotate genes again (e.g. using `Bakta`)! How many genes (CDS) do you find now in comparison to the _de novo_ assembly without any polishing? 
 
-Now, we want to call variants for your Nanopore sample in comparison to a reference sequence (**not** using the _de novo_ assembly!).
+Now, we want to call variants for your Nanopore sample in comparison to a reference sequence (**not** using the _de novo_ assembly you calculated!).
 
 * To do so, download a reference genome for _Salmonella_ from [NCBI](https://www.ncbi.nlm.nih.gov/genome/)
 * Map the Nanopore reads of your _Salmonella_ sample against the reference genome
