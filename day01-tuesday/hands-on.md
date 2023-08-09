@@ -182,6 +182,12 @@ srun --gpus=1 --pty bash -i
 # Start the Singularity image with GPU support
 singularity run --nv guppy_gpu-6.4.6-1--2c17584.img
 
+# Make sure you are in the correct directory, which contains the fast5/ subdirectory
+cd 2023-08-nanopore-workshop-example-bacteria
+ls
+# output:
+# fast5  fastq  minknow_report.html  pycoqc.html  sequencing_summary_small.txt
+
 # Run guppy
 guppy_basecaller -i fast5 -s guppy_out_gpu -c dna_r10.4.1_e8.2_260bps_sup.cfg \
     -x auto -r --trim_strategy dna -q 0 --disable_pings
