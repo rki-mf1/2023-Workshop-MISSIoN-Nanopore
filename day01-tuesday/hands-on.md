@@ -129,7 +129,7 @@ Do basecalling by your own.
 
 **Note that this can be quite tricky and involves deeper Linux knowledge. Usually, you will be fine with the FASTQ and the already basecalled data that comes out of MinKNOW.**
 
-This might not work well on all systems. A good internet connection is needed as well as some basic knowledge in Docker container usage. Also, good hardware and in the best case a GPU are recommended. 
+This might not work well on all systems. A good internet connection is needed as well as some basic knowledge in Docker container usage (for Singularity see the paragraph at the end). Also, good hardware and in the best case a GPU are recommended. 
 
 Another nice overview (even though might be slightly outdated) is provided here: [Basecalling with Guppy](https://timkahlke.github.io/LongRead_tutorials/BS_G.html).
 
@@ -158,14 +158,42 @@ guppy_basecaller –i ./fast5 –s ./guppy_out –c dna_r10.4.1_e8.2_260bps_sup.
     --num_callers 48 --cpu_threads_per_caller 1
 
 # Attention! This will take ages even on a small FAST5 like in this example. You can also cancel that with "ctrl C". 
-# In this example, I ran on 48 cores (num_callers) and for the small example FAST5 this took 13 h for 40% of the reads basecalled.
+# In this example, I ran on 48 cores (num_callers) and for the small example FAST5 this took 24 h for 70% of the reads basecalled.
 # You should really run basecalling on a GPU, if possible.  
 
 # Here is an example command using a GPU and some additional qc parameters. 
 guppy_basecaller -i ./fast5 -s ./guppy_out_gpu -c dna_r10.4.1_e8.2_260bps_sup.cfg \
     -x auto -r --trim_strategy dna -q 0 --disable_pings
 
-# On the RKI High-Performance Cluster, this command took 2 minutes for basecalling the example data. 
+# On the RKI High-Performance Cluster (using Singularity, see below), this command took 2 minutes for basecalling the example data. 
 ```
 
-**Note**: An alternative to Docker is Singularity. The commands are slightly different then. However, on some systems (e.g. a High-performance cluster) it is not possible to use Docker due to permission settings and then Singularity is an option. Luckily, Docker containers can be easily (and automatically) converted into Singularity.
+### Using Singularity instead of Docker to run Guppy
+
+**Note**: An alternative to Docker is Singularity. The commands are slightly different then. However, on some systems (e.g. a High-performance cluster) it is not possible to use Docker due to permission settings, and then Singularity is an option. Luckily, Docker containers can be easily (and automatically) converted into Singularity. Here are some example commands assuming an HPC with SLURM as the job scheduler (like at the RKI):
+
+```bash
+# Get the Docker image and convert to Singularity
+singularity pull --name guppy_gpu-6.4.6-1--2c17584.img docker://nanozoo/guppy_gpu:6.4.6-1--2c17584
+
+# Start an interactive session on a GPU node
+srun --gpus=1 --pty bash -i
+
+# Start the Singularity image with GPU support
+singularity run --nv guppy_gpu-6.4.6-1--2c17584.img
+
+# Make sure you are in the correct directory, which contains the fast5/ subdirectory
+cd 2023-08-nanopore-workshop-example-bacteria
+ls
+# output:
+# fast5  fastq  minknow_report.html  pycoqc.html  sequencing_summary_small.txt
+
+# Run guppy
+guppy_basecaller -i fast5 -s guppy_out_gpu -c dna_r10.4.1_e8.2_260bps_sup.cfg \
+    -x auto -r --trim_strategy dna -q 0 --disable_pings
+
+# You should see in the terminal output that GPU access is activated:
+# ...
+# gpu device:         auto
+# ...
+```
