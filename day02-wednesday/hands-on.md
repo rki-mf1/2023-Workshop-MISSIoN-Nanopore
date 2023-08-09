@@ -2,7 +2,7 @@
 
 ## Hands-on
 
-We will continue first with the _E. coli_ data from yesterday. The raw FASTQ data should be located in your folder `input-data/eco.nanopore.fastq.gz`. Remember, that you already length-filtered the data producing a file `eco-filtered.fastq`. Use this as an input for the _de novo_ assembly. Remember to activate your Conda environment or install the necessary tools if not available.
+We will first continue first with the _E. coli_ data from yesterday. The raw FASTQ data should be located in your folder `input-data/eco.nanopore.fastq.gz`. Remember, that you already length-filtered the data producing a file `eco-filtered.fastq`. Use this as an input for the _de novo_ assembly. Remember to activate your Conda environment or install the necessary tools if not available.
 
 ### _De novo_ assembly (Flye)
 
@@ -87,9 +87,9 @@ For the following tasks, you will use now again Nanopore FASTQ data of _Salmonel
 * 9866-12-Nanopore, ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR218/071/SRR21833871/SRR21833871_1.fastq.gz (2.6 GB)
 * 8640-41-Nanopore, ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR218/078/SRR21833878/SRR21833878_1.fastq.gz (1.5 GB)
 
-_De novo_ assemble the genome. Remember, that you qc'ed the data already and you might want to use the length-filtered reads. If not yet done, check out the [`flye` paper](https://www.nature.com/articles/s41587-019-0072-8) (**Maybe first start the assembly, then read the paper while it is running**). Install `flye` if not available and run on the filtered reads. Investigate the results via `Bandage`. How good is your assembly? 
+_De novo_ assemble the genome. Remember, that you qc'ed the data already and you might want to use the length-filtered reads. If not yet done, check out the [flye paper](https://www.nature.com/articles/s41587-019-0072-8) (**Maybe first start the assembly, then read the paper while it is running**). Install `flye` if not available and run on the filtered reads. Investigate the results via `Bandage`. How good is your assembly? Remember that you also calculated a _de novo_ assembly based on the short Illumina reads using `SPAdes`? If so, also load the `*.gfa` graph file from your previous `SPAdes` results and for the corresponding _Salmonella_ sample and compare them. 
 
-Annotate genes in your assembly like you learned for Illumina data before (e.g. `Prokka`, `Bakta`, `Abricate` ...). How many genes do you find? Can you compare that to Illumina? Is it better? Worse?
+Now, annotate genes in your assembly like you learned for Illumina data before (e.g. `Prokka`, `Bakta`, `Abricate` ...). How many genes do you find (CDS, hypothetical genes)? Can you compare that to Illumina? Is it better? Worse?
 
 ## Bonus 1
 
@@ -105,4 +105,11 @@ wget --no-check-certificate https://osf.io/jcsfb/download -O 2023-08-nanopore-wo
 
 Also assemble the FASTQ data that is in this archive. Inspect the assembly graph. Can you find out which bacterial species is in the sample? 
 
+## Bonus 3
 
+Download a reference genome FASTA for _E. coli_ from [NCBI](https://www.ncbi.nlm.nih.gov/genome/?term=txid562[orgn]&shouldredirect=false). Also download an annotation file (e.g. in GFF format). Now, use `minimap2` to map your _E. coli_ reads to the reference genome. Visualize the mapping in IGV and also load the annotation file as an additional track. Now, specifically investigate the two genome regions:
+
+* position 1,325,600 bp
+* position 1,362,500 bp
+
+What do you see in both regions? Can you tell if a gene located in one or the other region is somehow affected by the event you can observe?

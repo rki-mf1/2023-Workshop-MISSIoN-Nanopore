@@ -34,7 +34,7 @@ A practical introduction to long-read bioinformatics for bacterial genome recons
 | Time        | Genome Reconstruction I |
 | --          | --               |
 | 09:00-09:30 | Debriefing Day 1 |
-| 09:30-10:30 | [_De novo_ Assembly & Annotation](day02-wednesday/assembly.md) |
+| 09:30-10:30 | [_De novo_ Assembly](day02-wednesday/assembly.md) |
 | 10:30-11:00 | Coffee break |
 | 11:00-12:00 | [Mapping & Visualization](day02-wednesday/mapping.md) |
 | 12:00-13:00 | Lunch break |
