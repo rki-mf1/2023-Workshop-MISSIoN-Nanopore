@@ -108,4 +108,14 @@ Try different allele frequency cutoffs with `Medaka` for the variant calling: `-
 
 ## Bonus 2
 
-You also have short-read Illumina data corresponding to your _Salmonella_ Nanopore data. Use the high-accuracy short-read data to polish your _best_ long-read assembly again. Use `Pilon` for that. Install `Pilon` and familiarize yourself with the tool. For the necessary mapping of the short reads to the assembly you can use `minimap2` with the appropriate option for short reads or another mapping tool such as `bwa`.  
+You also have short-read Illumina data corresponding to your _Salmonella_ Nanopore data. Use the high-accuracy short-read data to polish your _best_ long-read assembly again. Use `Polypolish` for that. Install `Polypolish` and [familiarize yourself with the tool](https://github.com/rrwick/Polypolish/wiki). For the necessary mapping of the short reads to the assembly you should use `bwa`. Check the `Polypolish` manual!  
+
+### Quick start (see https://github.com/rrwick/Polypolish/wiki/How-to-run-Polypolish for more details!)
+
+```bash
+bwa index draft.fasta
+bwa mem -t 16 -a draft.fasta reads_1.fastq.gz > alignments_1.sam
+bwa mem -t 16 -a draft.fasta reads_2.fastq.gz > alignments_2.sam
+polypolish_insert_filter.py --in1 alignments_1.sam --in2 alignments_2.sam --out1 filtered_1.sam --out2 filtered_2.sam
+polypolish draft.fasta filtered_1.sam filtered_2.sam > polished.fasta
+```

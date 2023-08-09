@@ -2,7 +2,7 @@
 
 ## Lectures
 
-* [Polishing and Assembly quality](assembly-qc.md)
+* [Polishing](polishing.md)
 * [Variant calling](variant-calling.md)
 
 ## Practical part
