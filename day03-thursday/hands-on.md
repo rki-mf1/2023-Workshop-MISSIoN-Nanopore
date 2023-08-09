@@ -25,7 +25,7 @@ samtools index eco-mapping.sorted.bam
 racon -t 4 eco-filtered.fastq eco-mapping.sam flye_output/assembly.fasta > eco-consensus-racon.fasta
 
 # map to new consensus
-minimap2 -ax map-ont eco-consensus-racon eco-filtered.fastq > eco-consensus-mapping.sam
+minimap2 -ax map-ont eco-consensus-racon.fasta eco-filtered.fastq > eco-consensus-mapping.sam
 
 # now look at it in tablet or IGV again
 ```
