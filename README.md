@@ -49,7 +49,7 @@ A practical introduction to long-read bioinformatics for bacterial genome recons
 | Time        | Genome Reconstruction II & Variant calling |
 | --          | --               |
 | 09:00-09:30 | Debriefing Day 2 |
-| 09:30-10:30 | [Assembly polishing & annotation quality](day03-thursday/assembly-qc.md) |
+| 09:30-10:30 | [Assembly polishing](day03-thursday/polishing.md) |
 | 10:30-11:00 | Coffee break |
 | 11:00-12:00 | [Variant calling](day03-thursday/variant-calling.md) |
 | 12:00-13:00 | Lunch break |
@@ -63,9 +63,9 @@ A practical introduction to long-read bioinformatics for bacterial genome recons
 | Time        | The Rest & Open Questions |
 | --          | --               |
 | 09:00-09:30 | Debriefing Day 3 |
-| 09:30-10:30 | [Lecture TBA]() |
+| 09:30-10:30 | [Miscellaneous](day04-friday/misc.md) |
 | 10:30-11:00 | Coffee break |
-| 11:00-12:00 | [Hands-on & demo]() |
+| 11:00-12:00 | [Hands-on & demo](day04-friday/hands-on.md) |
 | 12:00-12:30 | Wrap-up & questions |
 
 ## Acknowledgement
@@ -75,3 +75,4 @@ This course material is partly based on the following resources and on contribut
 * Sebastian "Raverjay" Krautwurst, FSU Jena, some Linux and ONT content
 * Workshop structure inspired by [https://github.com/cinemaparis/2023](https://github.com/cinemaparis/2023)
 * Some ONT intro slides from Josh Quick, [original](https://github.com/cinemaparis/2023/blob/main/day1-Tuesday/slides-Quick.pdf)
+* Nanopore long-read bioinformatics tutorial from [timkahlke](https://timkahlke.github.io/LongRead_tutorials)
