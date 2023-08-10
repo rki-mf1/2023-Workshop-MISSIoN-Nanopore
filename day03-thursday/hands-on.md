@@ -53,18 +53,19 @@ mamba install -c bioconda medaka
 
 ```bash
 # Run Medaka
-# ATTENTION: it is always good to assign an appropriate Medaka model based on 
-# the performed basecalling! Here, we dont do that for illustration and because for the E. coli 
-# data the used basecalling model ist not directly provided. You can do that better in the following Exercise! :) 
+# ATTENTION: it is always good to assign an appropriate Medaka model -m based on 
+# the performed basecalling! Here, we use some example model for the E. coli 
+# data. Adjust that in the following Exercise! 
 # If you are on the RKI HPC: due to restrictions it might be even difficult to run other Medaka models because 
 # they need to be downloaded first. 
-medaka_consensus -i eco-filtered.fastq -d eco-consensus-racon.fasta -o eco-medaka -t 4
+medaka_consensus -i eco-filtered.fastq -d eco-consensus-racon.fasta -o eco-medaka -m r941_min_sup_g507 -t 4
 
 # Exercise: look at it in tablet or IGV
 # Hint: first need a mapping to the new consensus again to generate the SAM/BAM file!
 ```
 [Code](https://github.com/nanoporetech/medaka)
 
+**Note** that you should usually change the model parameter (`-m``) to whatever is most appropriate for your basecalling. Also note that `medaka_consensus`` is not the same thing as `medaka consensus`` (underscore vs space) - the former is a convenience script which does the entire process (including read mapping) while the latter is a subcommand of Medaka which only does the polishing step. (thx to [Ryan Wick for this explanation](https://github.com/rrwick/Trycycler/wiki/Polishing-after-Trycycler)).
 
 
 ## Exercise
