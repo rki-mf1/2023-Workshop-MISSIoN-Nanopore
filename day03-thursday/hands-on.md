@@ -46,9 +46,8 @@ minimap2 -ax map-ont eco-consensus-racon.fasta eco-filtered.fastq > eco-consensu
     * thus, let us install `mamba` via `conda` and then install `medaka`
 
 ```bash
-conda create -n medaka mamba python=3.8
-conda activate medaka
-mamba install -c bioconda medaka
+mamba create -y -p envs/medaka "medaka>=1.8.0"
+conda activate envs/medaka
 ```
 
 ```bash
@@ -85,7 +84,7 @@ Now, we want to call variants for your Nanopore sample in comparison to a refere
 * Map the Nanopore reads of your _Salmonella_ sample against the reference genome
 * use `Medaka` now for variant calling and not directly for consensus calculation, here are some hints (that you can/must adjust! Check also https://github.com/nanoporetech/medaka):
 
-```bash
+```sh
 # Call variants with Medaka
 #__Important__: Always use the matching `medaka` model based on how the `guppy` basecalling was done! You can check which `medaka` models are available via:
 medaka tools list_models | grep -v Default
@@ -113,7 +112,7 @@ You also have short-read Illumina data corresponding to your _Salmonella_ Nanopo
 ### Quick start
 (see https://github.com/rrwick/Polypolish/wiki/How-to-run-Polypolish for more details!)
 
-```bash
+```sh
 bwa index draft.fasta
 bwa mem -t 16 -a draft.fasta reads_1.fastq.gz > alignments_1.sam
 bwa mem -t 16 -a draft.fasta reads_2.fastq.gz > alignments_2.sam
