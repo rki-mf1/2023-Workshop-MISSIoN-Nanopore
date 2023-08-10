@@ -8,8 +8,10 @@ Use `assembly-stats` to check the quality of some of your assemblies produced du
 
 [Code & README](https://github.com/sanger-pathogens/assembly-stats)
 
-```sh
-assembly-stats assembly.fasta
+```bash
+mamba create -y -p envs/assembly-stats assembly-stats
+# Just an example, for the E. coli flye assembly
+assembly-stats flye_output/assembly.fasta
 ```
 
 ### Assembly comparison
@@ -20,6 +22,12 @@ Check the `--help` and chose appropriate parameters to run the tool.
 
 [Code & REAMDE](https://github.com/ablab/quast)
 
+```bash
+mamba create -y -p envs/quast quast
+conda activate quast
+quast --help
+```
+
 ### Investigation of fragmented ORFs via IDEEL
 
 A neat way to do so is using so-called IDEEL plots as [initially proposed by Mick Watson](http://www.opiniomics.org/a-simple-test-for-uncorrected-insertions-and-deletions-indels-in-bacterial-genomes/). Different people implemented this approach, for example [github.com/phiweger/ideel](https://github.com/phiweger/ideel).
@@ -29,33 +37,28 @@ Here, we will combine various tasks to get this approach running.
 Lets first install the code from [this repository](https://github.com/phiweger/ideel) and the necessary dependencies via `mamba`. Then, we generate the protein database index, prepare the input genome files and run the workflow. 
 
 ```bash
+mamba create -y -p envs/ideel snakemake prodigal diamond r-ggplot2 r-readr
+conda activate envs/ideel
+
 git clone https://github.com/phiweger/ideel.git
 cd ideel
 
-conda create -n ideel mamba
-conda activate ideel
-mamba install snakemake prodigal diamond r-ggplot2 r-readr
-
 # get a reference database of protein sequences
-wget ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz
+wget "ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz"
 # generate an index with diamond
 diamond makedb --in uniprot_sprot.fasta.gz -d database_uniprot
-
-# edit the config.json file that was copied from the ideel github repository
-# specifying e.g. the path to the Diamond database.
-# open the config.json with any texteditor
 
 # The output of the workflow will be written to --directory. 
 mkdir ideel-results
 # In there, make a directory called "genomes"
 mkdir ideel-results/genomes
 # put assemblies in there with .fa file extension
-cp /scratch/$USER/workshop/*.fasta ideel-results/genomes/
+cp ../*.fasta ideel-results/genomes/
 # The workflow wants the files to have .fa instead of .fasta!
 rename 's/\.fasta$/.fa/' ideel-results/genomes/*.fasta
 
 # run the workflow
-snakemake --configfile config.json --directory ideel-results --cores 4
+snakemake --configfile config.json --config db=../database_uniprot.dmnd --directory ideel-results/ --cores 4
 ```
 
 Investigate the final output plots. How fragmented are your ORFs? Run the workflow on an assembly produced with Illumina and Nanopore. How does the fragmentation of your ORFs change when you polish your assembly? 
