@@ -10,6 +10,7 @@ Use `assembly-stats` to check the quality of some of your assemblies produced du
 
 ```bash
 mamba create -y -p envs/assembly-stats assembly-stats
+conda activate envs/assembly-stats
 # Just an example, for the E. coli flye assembly
 assembly-stats flye_output/assembly.fasta
 ```
@@ -24,8 +25,8 @@ Check the `--help` and chose appropriate parameters to run the tool.
 
 ```bash
 mamba create -y -p envs/quast quast
-conda activate quast
-quast --help
+conda activate envs/quast
+#quast --help
 ```
 
 ### Investigation of fragmented ORFs via IDEEL
@@ -53,7 +54,10 @@ mkdir ideel-results
 # In there, make a directory called "genomes"
 mkdir ideel-results/genomes
 # put assemblies in there with .fa file extension
-cp ../*.fasta ideel-results/genomes/
+cp ../ecoli-reference.fna ideel-results/genomes/eco-reference.fa
+cp ../flye_output/assembly.fasta ideel-results/genomes/eco-consensus-flye.fasta
+cp ../eco-consensus-racon.fasta ideel-results/genomes/eco-consensus-racon.fasta
+cp ../eco-medaka/consensus.fasta ideel-results/genomes/eco-consensus-medaka.fasta
 # The workflow wants the files to have .fa instead of .fasta!
 rename 's/\.fasta$/.fa/' ideel-results/genomes/*.fasta
 

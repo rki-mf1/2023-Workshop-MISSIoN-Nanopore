@@ -29,7 +29,7 @@ Bandage &
 
 __Tools that have a graphical user interface can cause problems on a cluster machine__.
 
-Alternative:
+Alternative, if you can't get Bandage running with the above commands:
 * go to https://rrwick.github.io/Bandage
 * download the correct version for your Operating system, e.g.
     * download Windows version
@@ -117,3 +117,4 @@ Download a reference genome FASTA for _E. coli_ from [NCBI](https://www.ncbi.nlm
 * position 1,362,500 bp
 
 What do you see in both regions? Can you tell if a gene located in one or the other region is somehow affected by the event you can observe?
+
