@@ -81,13 +81,9 @@ __Alternative ways to visualize such a mapping are given by (commercial software
 
 ## Exercise
 
-For the following tasks, you will use now again Nanopore FASTQ data of _Salmonella_ from the European Nucleotide Archive (ENA, project ID https://www.ebi.ac.uk/ena/browser/view/PRJNA887350). Remember, the Nanopore data corresponds to the Illumina samples you already worked on. There are three Nanopore samples, you can work on all of them or pick one! The data is a bit older, from 2019 and was sequenced on a MinION flow cell (FLO-MIN106). Basecalling was done with the `FAST` basecalling model. **You should also find the FASTQ files on your laptops, in case the internet is too slow for downloading.**
+For the following tasks, you will use now again the Nanopore FASTQ data of _Salmonella_ from [ENA](https://www.ebi.ac.uk/ena/browser/view/PRJNA887350). Remember, the Nanopore data corresponds to the Illumina samples you already worked on. There are three Nanopore samples, you can work on all of them or pick one! The data is a bit older, from 2019 and was sequenced on a MinION flow cell (FLO-MIN106). Basecalling was done with the `FAST` basecalling model. 
 
-* 8640-Nanopore, ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR218/090/SRR21833890/SRR21833890_1.fastq.gz (928 MB file size)
-* 9866-12-Nanopore, ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR218/071/SRR21833871/SRR21833871_1.fastq.gz (2.6 GB)
-* 8640-41-Nanopore, ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR218/078/SRR21833878/SRR21833878_1.fastq.gz (1.5 GB)
-
-_De novo_ assemble the genome. Remember, that you qc'ed the data already and you might want to use the length-filtered reads. If not yet done, check out the [flye paper](https://www.nature.com/articles/s41587-019-0072-8) (**Maybe first start the assembly, then read the paper while it is running**). Install `flye` if not available and run on the filtered reads. Investigate the results via `Bandage`. How good is your assembly? Remember that you also calculated a _de novo_ assembly based on the short Illumina reads using `SPAdes`? If so, also load the `*.gfa` graph file from your previous `SPAdes` results and for the corresponding _Salmonella_ sample and compare them. 
+_De novo_ assemble the genome(s). Remember, that you qc'ed the data already and you might want to use the length-filtered reads. If not yet done, check out the [flye paper](https://www.nature.com/articles/s41587-019-0072-8) (**Maybe first start the assembly, then read the paper while it is running**). Install `flye` if not available and run on the filtered reads. Investigate the results via `Bandage`. How good is your assembly? Remember that you also calculated a _de novo_ assembly based on the short Illumina reads using `SPAdes`? If so, also load the `*.gfa` graph file from your previous `SPAdes` results and for the corresponding _Salmonella_ sample and compare them. 
 
 Now, annotate genes in your assembly like you learned for Illumina data before (e.g. `Prokka`, `Bakta`, `Abricate` ...). How many genes do you find (CDS, hypothetical genes)? Can you compare that to Illumina? Is it better? Worse?
 
