@@ -105,16 +105,16 @@ For samples from the same study you analyzed short-read Illumina data. Pick one 
 
 ## Bonus 1
 
-1) Download another data set: 
+1) Download another data set (attention, 1.8 GB): 
 ```bash
-wget --no-check-certificate https://osf.io/jcsfb/download -O 2023-08-nanopore-workshop-example-bacteria.zip
+wget --no-check-certificate https://osf.io/7f8jz/download -O 2023-08-nanopore-workshop-example-bacteria.zip
 ```
 (or copy it from an USB stick). 
 
 Make a new subfolder in `nanopore-workshop` (or however you named your workshop directory) and place the downloaded `zip` archive here. Unzip the archive you just downloaded. Inspect the content. There is a MinKNOW summary report HTML file. Open it and inspect it. What can you tell about the nanopore sequencing run? Did it work well? 
 
-2) Investigate the quality using `NanoPlot` and, if you think it's necessary, lenght-filter the FASTQ file. 
-3) Use `PycoQC` to generate qc plots for the data set. Install `PycoQC` via Conda or use an available environment. In difference to `NanoPlot`, `PycoQC` needs as input a file called `sequencing_summary.txt` or similar. This is provided after the basecalling alongside with the FASTQ files. (_Note that the `sequencing_summary.txt` was downsampled for the purpose of this workshop_)
+2) Investigate the quality using `NanoPlot` and, if you think it's necessary, lenght-filter the FASTQ files. **Note** that you can combine the separate FASTQ files first into a single FASTQ file using `cat`! All four FASTQ files belong to the same barcode so it is safe to combine them into one file.  
+3) Use `PycoQC` to generate qc plots for the data set. Install `PycoQC` via Mamba or use an available environment. In difference to `NanoPlot`, `PycoQC` needs as input a file called `sequencing_summary.txt` or similar. This is provided after the basecalling alongside with the FASTQ files. (_Note that the `sequencing_summary.txt` was gziped, extract it first!_)
 
 **Note on installing `PycoQC`**: On my system it was a pain to install `PycoQC`. I finally managed using mamba:
 
