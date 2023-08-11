@@ -81,7 +81,15 @@ __Alternative ways to visualize such a mapping are given by (commercial software
 
 ## Exercise
 
-For the following tasks, you will use now again the Nanopore FASTQ data of _Salmonella_ from [ENA](https://www.ebi.ac.uk/ena/browser/view/PRJNA887350). Remember, the Nanopore data corresponds to the Illumina samples you already worked on. There are three Nanopore samples, you can work on all of them or pick one! The data is a bit older, from 2019 and was sequenced on a MinION flow cell (FLO-MIN106). Basecalling was done with the `FAST` basecalling model. 
+For the following tasks, you will use now again the Nanopore FASTQ data of _Salmonella_ from [ENA](https://www.ebi.ac.uk/ena/browser/view/PRJNA887350). Remember, the Nanopore data corresponds to the Illumina samples you already worked on:
+
+| Sample ID | Nanopore read ID | Illumina read ID |
+| -- | -- |  -- |
+| 8640 | SRR21833890 | SRR21833889 |
+| 9866-12 | SRR21833871 | SRR21833888 |
+| 8640-41 | SRR21833878 | SRR21833877 |
+
+There are three Nanopore samples, you can work on all of them or pick one! The data is a bit older, from 2019 and was sequenced on a MinION flow cell (FLO-MIN106). Basecalling was done with the `FAST` basecalling model. 
 
 _De novo_ assemble the genome(s). Remember, that you qc'ed the data already and you might want to use the length-filtered reads. If not yet done, check out the [flye paper](https://www.nature.com/articles/s41587-019-0072-8) (**Maybe first start the assembly, then read the paper while it is running**). Install `flye` if not available and run on the filtered reads. Investigate the results via `Bandage`. How good is your assembly? Remember that you also calculated a _de novo_ assembly based on the short Illumina reads using `SPAdes`? If so, also load the `*.gfa` graph file from your previous `SPAdes` results and for the corresponding _Salmonella_ sample and compare them. 
 

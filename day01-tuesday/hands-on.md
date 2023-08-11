@@ -92,7 +92,7 @@ NanoPlot -t 4 --fastq eco-filtered.fastq --title "Filtered reads" \
 ## Excercise
 
 1) Investigate the content of the FASTQ file you downloaded: `input-data/eco.nanopore.fastq.gz`. What are the first four lines telling you? What do you need to do to make the content of the file "human readable"? 
-2) Try `FastQC` on the _E. coli_ example FASTQ. Inspect the output. 
+2) Try `FastQC` on the _E. coli_ example FASTQ. Inspect the output. What is the GC content? 
 3) Now, use the Nanopore example data for _Salmonella_ that you either already have on your system or can download from [ENA](https://www.ebi.ac.uk/ena/browser/view/PRJNA887350):
 
 There are three Nanopore samples, you can work on all of them or pick one! The data is a bit older, from 2019 and was sequenced on a MinION flow cell (FLO-MIN106). Basecalling was done with the `FAST` basecalling model. 
@@ -101,7 +101,21 @@ There are three Nanopore samples, you can work on all of them or pick one! The d
 * 9866-12-Nanopore, ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR218/071/SRR21833871/SRR21833871_1.fastq.gz (2.6 GB)
 * 8640-41-Nanopore, ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR218/078/SRR21833878/SRR21833878_1.fastq.gz (1.5 GB)
 
-For samples from the same study you analyzed short-read Illumina data. Pick one of the _Salmonella_ nanopore FASTQ files. Create a decent folder structure to work with the data. Check the quality. Is read length filtering necessary? If so, do a read length filtering and compare the results. How long are the reads? Do you see any problems? Also try `fastqc` with the appropriate long-read parameter on your sample. What is the GC content? Does it match the expected GC content of _Salmonella_?
+For samples from the same study you analyzed short-read Illumina data. The paired-end Illumina data that corresponds to the Nanopore data are:
+
+* 8640-Illumina, ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR218/089/SRR21833889/SRR21833889_1.fastq.gz and ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR218/089/SRR21833889/SRR21833889_2.fastq.gz (2x 380 MB file size)
+* 9866-12-Illumina, ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR218/088/SRR21833888/SRR21833888_1.fastq.gz and ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR218/088/SRR21833888/SRR21833888_2.fastq.gz (2x 300 MB)
+* 8640-41-Illumina, ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR218/077/SRR21833877/SRR21833877_1.fastq.gz and ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR218/077/SRR21833877/SRR21833877_2.fastq.gz (2x 77 MB)
+
+| Sample ID | Nanopore read ID | Illumina read ID |
+| -- | -- |  -- |
+| 8640 | SRR21833890 | SRR21833889 |
+| 9866-12 | SRR21833871 | SRR21833888 |
+| 8640-41 | SRR21833878 | SRR21833877 |
+
+But we dont need the Illumina data now, remember it for later.
+
+Pick one of the _Salmonella_ nanopore FASTQ files. Create a decent folder structure to work with the data. Check the quality. Is read length filtering necessary? If so, do a read length filtering and compare the results. How long are the reads? Do you see any problems? Also try `fastqc` with the appropriate long-read parameter on your sample. What is the GC content? Does it match the expected GC content of _Salmonella_?
 
 ## Bonus 1
 
