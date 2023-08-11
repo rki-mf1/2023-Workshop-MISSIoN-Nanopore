@@ -21,10 +21,9 @@
     * we will already install many tools that we will use over the next days!
 
 ```bash
-# in activated 'workshop' enviroment!
-conda create -n workshop # if not already created for you! 
-conda activate workshop
-conda install fastqc nanoplot filtlong flye bandage minimap2 tablet racon samtools igv
+mkdir envs
+mamba create -y -p envs/workshop fastqc nanoplot filtlong flye bandage minimap2 tablet racon samtools igv
+conda activate envs/workshop
 # test
 NanoPlot --help
 flye --version
@@ -39,7 +38,7 @@ __Reminder: You can also install specific versions of a tool!__
 
 Below are just example paths, you can also adjust them and use other folder names! Assuming you are on a Linux system on a local machine (lpatop, workstation):
 
-```bash
+```sh
 # Switch to a path on your system where you want to store your data and results
 cd /scratch/$USER
 # Create new folder
@@ -62,7 +61,7 @@ pwd
 mkdir input-data
 mv SRR12012232_1.fastq.gz input-data/eco.nanopore.fastq.gz
 # double-check that everything is in place:
-ls -lah input data/
+ls -lah input-data/
 # all good? Let's move on to QC!
 ```
 
@@ -70,7 +69,7 @@ ls -lah input data/
 
 ```bash
 NanoPlot -t 4 --fastq input-data/eco.nanopore.fastq.gz --title "Raw reads" \
-    --color darkslategrey --N50 --plots hex --loglength -f png -o nanoplot/raw 
+    --color darkslategrey --N50 --legacy hex --loglength -f png -o nanoplot/raw
 ```
 [Publication](https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/bty149/4934939) | [Code](https://github.com/wdecoster/NanoPlot)
 
@@ -85,7 +84,7 @@ filtlong --min_length 5000 --keep_percent 90 \
 
 # Check the quality again:
 NanoPlot -t 4 --fastq eco-filtered.fastq --title "Filtered reads" \
-    --color darkslategrey --N50 --plots hex --loglength -f png -o nanoplot/clean 
+    --color darkslategrey --N50 --legacy hex --loglength -f png -o nanoplot/clean
 ```
 [Code](https://github.com/rrwick/Filtlong)
 
@@ -112,7 +111,7 @@ Make a new subfolder in `nanopore-workshop` (or however you named your workshop 
 **Note on installing `PycoQC`**: On my system it was a pain to install `PycoQC`. I finally managed using mamba:
 
 ```bash
-mamba create -n pycoqc pycoqc
+mamba create -y -p envs/pycoqc pycoqc
 ```
 
 If that doesn't work you might need to:
@@ -138,7 +137,7 @@ Another nice overview (even though might be slightly outdated) is provided here:
 * [The dark secret about containers in Bioinformatics](https://www.happykhan.com/posts/dark-secret-about-containers/)
 * [Container Introduction Training](https://github.com/sib-swiss/containers-introduction-training)
 
-```bash
+```sh
 # Assuming that you have Docker installed and configured
 # Get a container image with guppy
 docker pull nanozoo/guppy_gpu:6.4.6-1--2c17584
@@ -172,7 +171,7 @@ guppy_basecaller -i ./fast5 -s ./guppy_out_gpu -c dna_r10.4.1_e8.2_260bps_sup.cf
 
 **Note**: An alternative to Docker is Singularity. The commands are slightly different then. However, on some systems (e.g. a High-performance cluster) it is not possible to use Docker due to permission settings, and then Singularity is an option. Luckily, Docker containers can be easily (and automatically) converted into Singularity. Here are some example commands assuming an HPC with SLURM as the job scheduler (like at the RKI):
 
-```bash
+```sh
 # Get the Docker image and convert to Singularity
 singularity pull --name guppy_gpu-6.4.6-1--2c17584.img docker://nanozoo/guppy_gpu:6.4.6-1--2c17584
 
