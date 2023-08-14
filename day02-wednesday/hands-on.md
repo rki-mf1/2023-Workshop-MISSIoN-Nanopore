@@ -8,6 +8,7 @@ We will first continue first with the _E. coli_ data from yesterday. The raw FAS
 
 ```bash
 # run the assembly, this will take a bit time
+conda activate envs/workshop
 flye --nano-raw eco-filtered.fastq -o flye_output -t 4 --meta --genome-size 5M
 # the final output genome assembly will be in flye_output/assembly.fasta
 ```

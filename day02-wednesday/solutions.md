@@ -1,7 +1,8 @@
 ## Exercise
 
 ```bash
-wget "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR218/090/SRR21833890/SRR21833890_1.fastq.gz" -O input-data/sal1.fastq.gz
+wget "ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR218/090/SRR21833890/SRR21833890_1.fastq.gz"
+mv SRR21833890_1.fastq.gz input-data/sal1.fastq.gz
 # Length filter reads
 filtlong --min_length 5000 --keep_percent 90 \
     --target_bases 500000000 input-data/sal1.fastq.gz > sal1-filtered.fastq

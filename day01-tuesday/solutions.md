@@ -3,13 +3,15 @@
 1)
 
 ```bash
-zcat input-data/eco.nanopore.fastq.gz | head -n 
+zcat input-data/eco.nanopore.fastq.gz | head -n 4
 ```
 
 2)
 
 ```bash
-fastqc --outdir eco-fastqc input-data/eco.nanopore.fastq.gz 
+conda activate envs/workshop
+mkdir eco-fastqc
+fastqc --memory 1024 --outdir eco-fastqc input-data/eco.nanopore.fastq.gz
 ```
 
 3)
@@ -30,15 +32,16 @@ mv 2023-08-nanopore-workshop-example-bacteria bacteria
 2)
 
 ```bash
-NanoPlot -t 4 --fastq bacteria/fastq/FAU91295_pass_barcode08_690050ad_3ed9c4ae_0.fastq.gz --title "Raw reads" \
-    --color darkslategrey --N50 --legacy hex --loglength -f png -o bacteria/nanoplot/raw
+conda activate envs/workshop
+NanoPlot -t 4 --fastq bacteria/fastq/*.fastq.gz --title "Raw reads" \
+    --color darkslategrey --N50 --loglength -f png -o bacteria/nanoplot/raw
 ```
 
 3)
 
 ```bash
 conda activate envs/pycoqc
-pycoQC -f bacteria/sequencing_summary_small.txt -o bacteria/pycoQC_output.html
+pycoQC -f bacteria/sequencing_summary.txt.gz -o bacteria/pycoQC_output.html
 ```
 
 ## Bonus 2 (and a little detour into containers)

@@ -41,12 +41,14 @@ Lets first install the code from [this repository](https://github.com/phiweger/i
 mamba create -y -p envs/ideel snakemake prodigal diamond r-ggplot2 r-readr
 conda activate envs/ideel
 
+wget "ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz"
+
 git clone https://github.com/phiweger/ideel.git
 cd ideel
 
 # get a reference database of protein sequences
-wget "ftp://ftp.uniprot.org/pub/databases/uniprot/current_release/knowledgebase/complete/uniprot_sprot.fasta.gz"
 # generate an index with diamond
+mv ../uniprot_sprot.fasta.gz .
 diamond makedb --in uniprot_sprot.fasta.gz -d database_uniprot
 
 # The output of the workflow will be written to --directory. 
@@ -63,6 +65,7 @@ rename 's/\.fasta$/.fa/' ideel-results/genomes/*.fasta
 
 # run the workflow
 snakemake --configfile config.json --config db=../database_uniprot.dmnd --directory ideel-results/ --cores 4
+cd ..
 ```
 
 Investigate the final output plots. How fragmented are your ORFs? Run the workflow on an assembly produced with Illumina and Nanopore. How does the fragmentation of your ORFs change when you polish your assembly? 
