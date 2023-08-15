@@ -18,7 +18,7 @@ fi
 mv download-new.sh download.sh
 if [ ! -d "downloads" ]; then
   echo "Downloading all files into the cache (./downloads/)"
-  mkdir downloads
+  mkdir -p downloads
   cd downloads
   bash -x ../download.sh
   cd -
