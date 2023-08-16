@@ -69,7 +69,7 @@ ls -lah input-data/
 
 ```bash
 NanoPlot -t 4 --fastq input-data/eco.nanopore.fastq.gz --title "Raw reads" \
-    --color darkslategrey --N50 --legacy hex --loglength -f png -o nanoplot/raw
+    --color darkslategrey --N50 --loglength -f png -o nanoplot/raw
 ```
 [Publication](https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/bty149/4934939) | [Code](https://github.com/wdecoster/NanoPlot)
 
@@ -84,7 +84,7 @@ filtlong --min_length 1000 --keep_percent 90 \
 
 # Check the quality again:
 NanoPlot -t 4 --fastq eco-filtered.fastq --title "Filtered reads" \
-    --color darkslategrey --N50 --legacy hex --loglength -f png -o nanoplot/clean
+    --color darkslategrey --N50 --loglength -f png -o nanoplot/clean
 ```
 [Code](https://github.com/rrwick/Filtlong)
 
