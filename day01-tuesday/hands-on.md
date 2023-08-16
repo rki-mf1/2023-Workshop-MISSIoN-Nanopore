@@ -69,7 +69,7 @@ ls -lah input-data/
 
 ```bash
 NanoPlot -t 4 --fastq input-data/eco.nanopore.fastq.gz --title "Raw reads" \
-    --color darkslategrey --N50 --legacy hex --loglength -f png -o nanoplot/raw
+    --color darkslategrey --N50 --loglength -f png -o nanoplot/raw
 ```
 [Publication](https://academic.oup.com/bioinformatics/advance-article/doi/10.1093/bioinformatics/bty149/4934939) | [Code](https://github.com/wdecoster/NanoPlot)
 
@@ -78,13 +78,13 @@ NanoPlot -t 4 --fastq input-data/eco.nanopore.fastq.gz --title "Raw reads" \
 ### Read filtering (Filtlong)
 
 ```bash
-# we use quite strict parameters here to reduce the sample size and be faster with the assembly. ATTENTION: for your "real" samples other parameters might be better
-filtlong --min_length 5000 --keep_percent 90 \
+# Note: we use 1 kb as the minimum length cutoff as an example. For your "real" samples other parameters might be better. Do QC before. 
+filtlong --min_length 1000 --keep_percent 90 \
     --target_bases 500000000 input-data/eco.nanopore.fastq.gz > eco-filtered.fastq
 
 # Check the quality again:
 NanoPlot -t 4 --fastq eco-filtered.fastq --title "Filtered reads" \
-    --color darkslategrey --N50 --legacy hex --loglength -f png -o nanoplot/clean
+    --color darkslategrey --N50 --loglength -f png -o nanoplot/clean
 ```
 [Code](https://github.com/rrwick/Filtlong)
 
@@ -92,21 +92,43 @@ NanoPlot -t 4 --fastq eco-filtered.fastq --title "Filtered reads" \
 ## Excercise
 
 1) Investigate the content of the FASTQ file you downloaded: `input-data/eco.nanopore.fastq.gz`. What are the first four lines telling you? What do you need to do to make the content of the file "human readable"? 
-2) Try `FastQC` on the _E. coli_ example FASTQ. Inspect the output. 
-2) Now, use the example data for _Salmonella_ on your system; for the same samples you analyzed short-read Illumina data. Pick one of the _Salmonella_ nanopore FASTQ files. Create a decent folder structure to work with the data. Check the quality. Is read length filtering necessary? If so, do a read length filtering and compare the results. How long are the reads? Do you see any problems? Also try `fastqc` with the appropriate long-read parameter on your sample. What is the GC content? Does it match the expected GC content of _Salmonella_?
+2) Try `FastQC` on the _E. coli_ example FASTQ. Inspect the output. What is the GC content? 
+3) Now, use the Nanopore example data for _Salmonella_ that you either already have on your system or can download from [ENA](https://www.ebi.ac.uk/ena/browser/view/PRJNA887350):
+
+There are three Nanopore samples, you can work on all of them or pick one! The data is a bit older, from 2019 and was sequenced on a MinION flow cell (FLO-MIN106). Basecalling was done with the `FAST` basecalling model. 
+
+* 8640-Nanopore, ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR218/090/SRR21833890/SRR21833890_1.fastq.gz (928 MB file size)
+* 9866-12-Nanopore, ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR218/071/SRR21833871/SRR21833871_1.fastq.gz (2.6 GB)
+* 8640-41-Nanopore, ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR218/078/SRR21833878/SRR21833878_1.fastq.gz (1.5 GB)
+
+For samples from the same study you analyzed short-read Illumina data. The paired-end Illumina data that corresponds to the Nanopore data are:
+
+* 8640-Illumina, ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR218/089/SRR21833889/SRR21833889_1.fastq.gz and ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR218/089/SRR21833889/SRR21833889_2.fastq.gz (2x 380 MB file size)
+* 9866-12-Illumina, ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR218/088/SRR21833888/SRR21833888_1.fastq.gz and ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR218/088/SRR21833888/SRR21833888_2.fastq.gz (2x 300 MB)
+* 8640-41-Illumina, ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR218/077/SRR21833877/SRR21833877_1.fastq.gz and ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR218/077/SRR21833877/SRR21833877_2.fastq.gz (2x 77 MB)
+
+| Sample ID | Nanopore read ID | Illumina read ID |
+| -- | -- |  -- |
+| 8640 | SRR21833890 | SRR21833889 |
+| 9866-12 | SRR21833871 | SRR21833888 |
+| 8640-41 | SRR21833878 | SRR21833877 |
+
+But we dont need the Illumina data now, remember it for later.
+
+Pick one of the _Salmonella_ nanopore FASTQ files. Create a decent folder structure to work with the data. Check the quality. Is read length filtering necessary? If so, do a read length filtering and compare the results. How long are the reads? Do you see any problems? Also try `fastqc` with the appropriate long-read parameter on your sample. What is the GC content? Does it match the expected GC content of _Salmonella_?
 
 ## Bonus 1
 
-1) Download another data set: 
+1) Download another data set (attention, 1.8 GB): 
 ```bash
-wget --no-check-certificate https://osf.io/jcsfb/download -O 2023-08-nanopore-workshop-example-bacteria.zip
+wget --no-check-certificate https://osf.io/7f8jz/download -O 2023-08-nanopore-workshop-example-bacteria.zip
 ```
 (or copy it from an USB stick). 
 
 Make a new subfolder in `nanopore-workshop` (or however you named your workshop directory) and place the downloaded `zip` archive here. Unzip the archive you just downloaded. Inspect the content. There is a MinKNOW summary report HTML file. Open it and inspect it. What can you tell about the nanopore sequencing run? Did it work well? 
 
-2) Investigate the quality using `NanoPlot` and, if you think it's necessary, lenght-filter the FASTQ file. 
-3) Use `PycoQC` to generate qc plots for the data set. Install `PycoQC` via Conda or use an available environment. In difference to `NanoPlot`, `PycoQC` needs as input a file called `sequencing_summary.txt` or similar. This is provided after the basecalling alongside with the FASTQ files. (_Note that the `sequencing_summary.txt` was downsampled for the purpose of this workshop_)
+2) Investigate the quality using `NanoPlot` and, if you think it's necessary, lenght-filter the FASTQ files. **Note** that you can combine the separate FASTQ files first into a single FASTQ file using `cat`! All four FASTQ files belong to the same barcode so it is safe to combine them into one file.  
+3) Use `PycoQC` to generate qc plots for the data set. Install `PycoQC` via Mamba or use an available environment. In difference to `NanoPlot`, `PycoQC` needs as input a file called `sequencing_summary.txt` or similar. This is provided after the basecalling alongside with the FASTQ files. (_Note that the `sequencing_summary.txt` was gziped, extract it first!_)
 
 **Note on installing `PycoQC`**: On my system it was a pain to install `PycoQC`. I finally managed using mamba:
 
