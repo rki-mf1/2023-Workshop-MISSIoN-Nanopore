@@ -1,21 +1,23 @@
-# 2023 Workshop MISSIoN Nanopore Bioinformatics
+# Workshop Nanopore Bioinformatics
 
-A practical introduction to long-read bioinformatics for bacterial genome reconstruction in the context of the Kenya MISSIoN project.
+**This is the main repository. If you are planning a new workshop, fork this one and adjust everything you need in your forked repository. If you want to add new content or update existing tools/commands, consider to do these changes first into this main repository via a Pull Request and before you start working on your workshop specifics!**
+
+A practical introduction to XXXXX for YYYYY in the context of the ZZZZZZ project.
 
 ## Schedule links for the workshop
 
-* [8 August - Tuesday](#0)  
-* [9 August - Wednesday](#1)  
-* [10 August - Thursday](#2)  
-* [11 August - Friday](#3)  
+* [YYYY-MM-DD - Someday](#0)  
+* [YYYY-MM-DD - Someday](#1)  
+* [YYYY-MM-DD - Someday](#2)  
+* [YYYY-MM-DD - Someday](#3)  
 
 ## Instructors
 
-* [Martin Hölzer](https://hoelzer.github.io), Matt Huska
+* FOO AND BAR
 
 ## Schedule
 
-> All events are held at Nordufer, room N01.O2.018
+> All events are held at SOMEPLACE, ROOM XZY
 
 ### <a name="0"></a> Tuesday, 8 August, 2023
 | Time        | Linux & Nanopores |
