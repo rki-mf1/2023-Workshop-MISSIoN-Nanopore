@@ -1,4 +1,4 @@
-# 2023 Workshop MISSIoN Nanopore Bioinformatics - Day 04
+# Workshop: Misc
 
 ## Hands-on
 

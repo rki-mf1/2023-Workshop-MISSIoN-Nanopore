@@ -1,4 +1,4 @@
-# 2023 Workshop MISSIoN Nanopore Bioinformatics - Day 01
+# Workshop content: General information, Linux re-cap, and Nanopore introduction
 
 ## Lectures
 

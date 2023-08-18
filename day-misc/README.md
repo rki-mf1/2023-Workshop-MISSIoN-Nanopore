@@ -1,6 +1,6 @@
-# 2023 Workshop MISSIoN Nanopore Bioinformatics - Day 04
+# Workshop content: Miscellaneous
 
-We use the last day for open questions and to discuss some additional helpful tools for your daily work with (Nanopore) sequencing data, assemblies, and annotations.
+Some additional helpful tools for your daily work with (Nanopore) sequencing data, assemblies, and annotations.
 
 ## Lectures
 

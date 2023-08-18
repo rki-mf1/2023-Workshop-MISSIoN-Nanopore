@@ -1,4 +1,4 @@
-# 2023 Workshop MISSIoN Nanopore Bioinformatics - Day 01
+# Workshop: Linux re-cap and Nanopore QC
 
 **Note**: If internet connection is slow, we can also distribute the example data via an USB stick (ask your instructor ;) ). 
 

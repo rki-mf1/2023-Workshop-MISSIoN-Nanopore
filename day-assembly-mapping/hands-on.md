@@ -1,4 +1,4 @@
-# 2023 Workshop MISSIoN Nanopore Bioinformatics - Day 02
+# Workshop: _De novo_ assembly and mapping
 
 ## Hands-on
 
