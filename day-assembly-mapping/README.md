@@ -8,3 +8,5 @@
 ## Practical part
 
 * [Hands-on](hands-on.md)
+
+[Let's assemble!](assembly.md)

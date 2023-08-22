@@ -96,7 +96,28 @@ __Exercise__
 
 * use `Trycycler` to combine the assembly results you have from different runs of the same sample into a _consensus_ long-read assembly
 
+### Taxonomic classification with Sourmash
 
+We can use `sourmash` to classify the assembled contigs taxonomically using reference sequences. An alternative could be `kraken2` on read level, for example.
 
+* compute sequence signatures for inputs (`compute`)
+* select 10000 hashes of input k-mers (`--scaled 10000`)
+* select 31 as k-mer size (`--k 31`)
 
+```bash
+conda activate workshop
 
+# download sourmash GTDB index v202 w/ taxonomy
+# GTDB genomic representatives (47.8k genomes), LCA, kmer 31 --> https://sourmash.readthedocs.io/en/latest/databases.html
+wget --no-check-certificate https://osf.io/ypsjq/download -O gtdb-rs202.genomic-reps.k31.lca.json.gz 
+DB='gtdb-rs202.genomic-reps.k31.lca.json.gz'
+
+# calculate signatures for your genome
+sourmash compute --scaled 10000 -k 31 eco-medaka/consensus.fasta -o sourmash.sig
+sourmash lca classify --db $DB --query sourmash.sig -o taxonomic-classification.txt
+
+#check results
+cat taxonomic-classification.txt
+```
+
+Additional information on Sourmash: [Code](https://github.com/sourmash-bio/sourmash) | [Publication](https://joss.theoj.org/papers/10.21105/joss.00027)

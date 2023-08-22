@@ -2,10 +2,16 @@
 
 ## Hands-on
 
-We will first continue first with the _E. coli_ data from yesterday. The raw FASTQ data should be located in your folder `input-data/eco.nanopore.fastq.gz`. Remember, that you already length-filtered the data producing a file `eco-filtered.fastq`. Use this as an input for the _de novo_ assembly. Remember to activate your Conda environment or install the necessary tools if not available.
+We will continue first with the _E. coli_ data from yesterday. The raw FASTQ data should be located in your folder `input-data/eco.nanopore.fastq.gz`. Remember, that you already length-filtered the data producing a file `eco-filtered.fastq`. Use this as an input for the _de novo_ assembly. Remember to activate your Conda environment or install the necessary tools if not available.
 
 ### _De novo_ assembly (Flye)
 
+* use your quality-checked and filtered reads for input 
+* note that we're using `--nano-raw` in this example because the _E. coli_ data is a bit older
+    * with newer ONT chemistry (e.g. >R10 flow cells) you should use `--nano-hq`, see also the `--help` of `Flye`
+* the output folder is called `flye_output`
+* we use `--meta` to activate the "expect metagenome/uneven coverage" mode which can help to recover full plasmid sequences
+* we tell the tool that the expected `--genome-size` is 5 Mbp
 ```bash
 # run the assembly, this will take a bit time
 conda activate envs/workshop
