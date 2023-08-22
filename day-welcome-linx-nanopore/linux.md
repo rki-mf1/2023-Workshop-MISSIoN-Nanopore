@@ -1,6 +1,6 @@
-# 2023 Workshop MISSIoN Nanopore Bioinformatics - Day 01
+# Workshop, Linux re-cap
 
-## Short Linux and bash re-cap (srry, again)
+## Short Linux and bash re-cap
 
 * Linux/Bash basics + conda setup ([slides](https://docs.google.com/presentation/d/14xELo7lDbd-FYuy144ZDK1tV_ZBdBYun_COelrKYWps/edit?usp=sharing))
 * Another good resource: [Introduction to the UNIX command line](https://ngs-docs.github.io/2021-august-remote-computing/introduction-to-the-unix-command-line.html)

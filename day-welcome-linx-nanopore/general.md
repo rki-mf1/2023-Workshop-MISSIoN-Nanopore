@@ -1,4 +1,4 @@
-# 2023 Workshop MISSIoN Nanopore Bioinformatics - Day 01
+# Workshop, General
 
 <a href="https://pollev.com/martinholzer210"><img align="right" width="140" height="140" src="../src/pollev.png"></a>
 
@@ -15,9 +15,13 @@ Go to [pollev.com/martinholzer210](https://pollev.com/martinholzer210) on your b
     * we will mostly use default parameter settings if not otherwise stated, which might be not optimal for your own data!
     * remember that `--help` and google (and ChatGPT) are your friends! 
 * Please raise your hand to ask a question at any time
-* There will be always "lecture" parts followed by practical hands-on 
-* We continue to work with the laptops you already used in the Illumina part
-* In the future, you might also use the HPC (High-performance Cluster) at RKI, which we can also give a try during the course
-    * Details about HPC usage can be found in the intranet (Confluence)
+* There will be usually "lecture" parts followed by practical hands-on 
+* We will work on Linux systems
+    * this can be your own laptops or laptops we provide
+    * or you will work on a High-Performance Computing (HPC) cluster, which adds more complexity but will be introduced
+    * details about the RKI HPC usage can be found in the intranet (Confluence)
+    * if you are not used to a Linux system, we will give a crash-course but highly recommend you continue working and learning on Linux systems if you want to continue doing bioinformatics
+
+So, let's get started!
 
 Next: [Linux for Bioinformatics re-cap](linux.md)
