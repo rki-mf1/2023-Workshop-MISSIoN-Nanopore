@@ -1,4 +1,4 @@
-# 2023 Workshop MISSIoN Nanopore Bioinformatics - Day 01
+# Workshop, Nanopore Introduction
 
 ## Long-read Nanopore Sequencing, Data Formats & Quality Control
 
